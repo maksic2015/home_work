@@ -3,7 +3,7 @@ fn main() {
     sausage = add(957, 3);
     sausage = sausage + 2;
     let ages= vec![9,1,1,8,10,58,48];
-    println!("Hello, max! {}", sum(ages));
+    print_fibonacci(11);
 }
 fn add(x: i32, y:i32) -> i32 {
     x+y
@@ -27,4 +27,18 @@ fn sum(items:Vec<i32>) -> i32 {
         println!("{}", result);
     }
     result
+}
+
+fn print_fibonacci(n:i32) {
+    for i in 0..n {
+        println!("{}", fibonacci_number(i));
+    }
+}
+
+fn fibonacci_number(i:i32) -> i32 {
+    return match i {
+        0 => 0,
+        1 => 1,
+        _ => fibonacci_number(i-1) + fibonacci_number(i-2)
+    }
 }
