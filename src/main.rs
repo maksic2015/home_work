@@ -42,3 +42,6 @@ fn fibonacci_number(i:i32) -> i32 {
         _ => fibonacci_number(i-1) + fibonacci_number(i-2)
     }
 }
+fn minus(x: i32, y:i32) -> i32 {
+    x-y
+}
