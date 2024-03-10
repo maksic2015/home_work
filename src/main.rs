@@ -3,7 +3,7 @@ fn main() {
     sausage = add(957, 3);
     sausage = sausage + 2;
     let ages= vec![9,1,1,8,10,58,48];
-    print_fibonacci(11);
+    fizzbuzz();
 }
 fn add(x: i32, y:i32) -> i32 {
     x+y
@@ -44,4 +44,26 @@ fn fibonacci_number(i:i32) -> i32 {
 }
 fn minus(x: i32, y:i32) -> i32 {
     x-y
+}
+fn is_divided_by_3(i:i32) -> bool {
+    i % 3 == 0
+}
+fn is_divided_by_5(i:i32) -> bool {
+    i % 5 == 0
+}
+fn is_divided_by_15(i:i32) -> bool {
+    i % 15 == 0
+}
+fn fizzbuzz(){
+    for i in 1..101 {
+        if is_divided_by_15(i) {
+            println!("fizzbuzz");
+        } else if is_divided_by_5(i) {
+            println!("buzz");
+        } else if is_divided_by_3(i) {
+            println!("fizz");
+        } else {
+            println!("{}", i);
+        }
+    }
 }
