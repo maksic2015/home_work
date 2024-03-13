@@ -3,7 +3,7 @@ fn main() {
     sausage = add(957, 3);
     sausage = sausage + 2;
     let ages= vec![9,1,1,8,10,58,48];
-    fizzbuzz();
+    pari_dispari();
 }
 fn add(x: i32, y:i32) -> i32 {
     x+y
@@ -57,14 +57,26 @@ fn is_divided_by_15(i:i32) -> bool {
 
 fn fizzbuzz(){
     for i in 1..17265 {
-        if is_divided_by_3(i) {
+        if is_divided_by_15(i) {
             println!("fizzbuzz");
         } else if is_divided_by_5(i) {
             println!("buzz");
-        } else if is_divided_by_15(i) {
+        } else if is_divided_by_3(i) {
             println!("fizz");
         } else {
             println!("{}", i);
+        }
+    }
+}
+fn is_divided_by_2(i:i32) -> bool {
+    i % 2 == 0
+}
+fn pari_dispari(){
+    for i in 1..17265 {
+        if is_divided_by_2(i) {
+            println!("pari");
+        } else {
+            println!("dispari");
         }
     }
 }
