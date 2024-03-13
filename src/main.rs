@@ -54,13 +54,14 @@ fn is_divided_by_5(i:i32) -> bool {
 fn is_divided_by_15(i:i32) -> bool {
     i % 15 == 0
 }
+
 fn fizzbuzz(){
-    for i in 1..101 {
-        if is_divided_by_15(i) {
+    for i in 1..17265 {
+        if is_divided_by_3(i) {
             println!("fizzbuzz");
         } else if is_divided_by_5(i) {
             println!("buzz");
-        } else if is_divided_by_3(i) {
+        } else if is_divided_by_15(i) {
             println!("fizz");
         } else {
             println!("{}", i);
