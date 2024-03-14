@@ -3,7 +3,7 @@ fn main() {
     sausage = add(957, 3);
     sausage = sausage + 2;
     let ages= vec![9,1,1,8,10,58,48];
-    pari_dispari();
+    all_5_friends(1000);
 }
 fn add(x: i32, y:i32) -> i32 {
     x+y
@@ -56,17 +56,17 @@ fn is_divided_by_15(i:i32) -> bool {
 }
 
 fn fizzbuzz(){
-    for i in 1..17265 {
-        if is_divided_by_15(i) {
-            println!("fizzbuzz");
-        } else if is_divided_by_5(i) {
-            println!("buzz");
-        } else if is_divided_by_3(i) {
-            println!("fizz");
-        } else {
-            println!("{}", i);
+        for i in 1..17265 {
+            if is_divided_by_15(i) {
+                println!("fizzbuzz");
+            } else if is_divided_by_5(i) {
+                println!("buzz");
+            } else if is_divided_by_3(i) {
+                println!("fizz");
+            } else {
+                println!("{}", i);
+            }
         }
-    }
 }
 fn is_divided_by_2(i:i32) -> bool {
     i % 2 == 0
@@ -77,6 +77,17 @@ fn pari_dispari(){
             println!("pari");
         } else {
             println!("dispari");
+        }
+    }
+}
+fn all_5_friends(n:i32){
+    for i in 1..n+1 {
+        if i % 10 == 0 {
+            println!("{}: I am your best friend", i);
+        } else if is_divided_by_5(i) {
+            println!("{}: I am your friend", i);
+        } else  {
+            println!("{}: I am not your friend", i);
         }
     }
 }
