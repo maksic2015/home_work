@@ -2,8 +2,8 @@ fn main() {
     let mut sausage:i32;
     sausage = add(957, 3);
     sausage = sausage + 2;
-    let ages= vec![9,1,1,8,10,58,48];
-    all_5_friends(1000);
+    let ages= vec![9,1,1,8,10,58,48,];
+    println!("{}",min(ages));
 }
 fn add(x: i32, y:i32) -> i32 {
     x+y
@@ -90,4 +90,33 @@ fn all_5_friends(n:i32){
             println!("{}: I am not your friend", i);
         }
     }
+}
+fn all_6_friends(n:i32){
+    for i in 1..n+1 {
+        if i % 36 == 0 {
+            println!("{}: I am your best friend", i);
+        } else if i % 6 == 0{
+            println!("{}: I am your friend", i);
+        } else  {
+            println!("{}: I am not your friend", i);
+        }
+    }
+}
+fn max(items:Vec<i32>) -> i32 {
+    let mut result:i32 = items[0];
+    for item in items.iter() {
+        if result < *item {
+            result = *item
+        }
+    }
+    result
+}
+fn min(items:Vec<i32>) -> i32 {
+    let mut result:i32 = items[0];
+    for item in items.iter() {
+        if result > *item {
+            result = *item
+        }
+    }
+    result
 }
