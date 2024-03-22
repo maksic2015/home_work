@@ -3,7 +3,7 @@ fn main() {
     sausage = add(957, 3);
     sausage = sausage + 2;
     let ages= vec![9,1,1,8,10,58,48,];
-    println!("{}",min(ages));
+    print_power_of_2(11)
 }
 fn add(x: i32, y:i32) -> i32 {
     x+y
@@ -119,4 +119,17 @@ fn min(items:Vec<i32>) -> i32 {
         }
     }
     result
+}
+fn print_power_of_2(n:i32) {
+    for i in 0..n {
+        println!("{}", crate::power_of_2(i));
+    }
+}
+
+fn power_of_2(i:i32) -> i32 {
+    return match i {
+        0 => 1,
+        1 => 2,
+        _ => crate::power_of_2(i-1)*2
+    }
 }
