@@ -2,8 +2,8 @@ fn main() {
     let mut sausage:i32;
     sausage = add(957, 3);
     sausage = sausage + 2;
-    let ages= vec![9,1,1,8,10,58,48,];
-    print_power_of_2(11)
+    // let ages= vec![9,1,1,8,10,58,48,];
+    print_power_of_5(11)
 }
 fn add(x: i32, y:i32) -> i32 {
     x+y
@@ -122,7 +122,7 @@ fn min(items:Vec<i32>) -> i32 {
 }
 fn print_power_of_2(n:i32) {
     for i in 0..n {
-        println!("{}", crate::power_of_2(i));
+        println!("{}", power_of_2(i));
     }
 }
 
@@ -130,6 +130,19 @@ fn power_of_2(i:i32) -> i32 {
     return match i {
         0 => 1,
         1 => 2,
-        _ => crate::power_of_2(i-1)*2
+        _ => power_of_2(i-1)*2
+    }
+}
+fn print_power_of_5(n:i32) {
+    for i in 0..n {
+        println!("{}", power_of_5(i));
+    }
+}
+
+fn power_of_5(n:i32) -> i32 {
+    return match n {
+        0 => 1,
+        1 => 5,
+        _ => 5 * power_of_5(n -1)
     }
 }
