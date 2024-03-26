@@ -3,7 +3,30 @@ fn main() {
     sausage = add(957, 3);
     sausage = sausage + 2;
     // let ages= vec![9,1,1,8,10,58,48,];
-    print_power_of_5(11)
+    print_power_of_5(11);
+
+    let r1 = Rectangle{
+        h:5,
+        w:2,
+    };
+    let r2 = Rectangle{
+        h:10,
+        w:30,
+    };
+
+    println!("Rectangle Area: {} {}", r1.area(), r2.area());
+
+    let mut maxic = Person{
+        name:"max".to_string(),
+        money:0,
+        age:8
+    };
+    maxic.hello();
+
+    maxic.add_money(100000);
+    maxic.add_money(100000);
+    maxic.add_money(100000);
+    println!("Maxic rich {}", maxic.money)
 }
 fn add(x: i32, y:i32) -> i32 {
     x+y
@@ -144,5 +167,34 @@ fn power_of_5(n:i32) -> i32 {
         0 => 1,
         1 => 5,
         _ => 5 * power_of_5(n -1)
+    }
+}
+fn magic_number(n: i32) -> i32 {
+    if n % 2 == 0 { n * 2} else { n+ 1 }
+}
+
+struct Rectangle {
+    h:i32,
+    w:i32
+}
+
+impl Rectangle {
+    fn area(&self) -> i32{
+        self.h*self.w
+    }
+}
+
+struct Person {
+    name: String,
+    money: u32,
+    age: u8
+}
+
+impl Person {
+    fn hello(&self) {
+        println!("Hello {}", self.name)
+    }
+    fn add_money(&mut self, amount: u32) {
+        self.money = self.money + amount
     }
 }
